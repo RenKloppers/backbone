@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Backbone.js • Todo</title>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+    <section id="todoapp">
+        <header id="header">
+            <h1>Todo</h1>
+            <input id="new-todo" placeholder="Add your todo's" autofocus/>
+            <br/><br/>
+            <div>
+                <a href="#/">Show All</a> |
+                <a href="#/pending">Show Pending</a> |
+                <a href="#/completed">Show Complete</a>
+            </div>
+        </header>
+        <section id="main">
+            <ui id="todo-list"></ui>
+        </section>
+    </section>
+
+    <script type="text/template" id="item-template">
+        <div class="view">
+            <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %> >
+            <label><%- title %></label>
+            <input class="edit" value="<%- title %>">
+            <button class="destroy">remove</button>
+        </div>
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/backbone/node_modules/underscore/underscore-min.js"></script>
+    <script src="node_modules/backbone/backbone-min.js"></script>
+    <script src="node_modules/backbone-localstorage/backbone-localstorage.min.js"></script>
+    <script src="js/models/model.js"></script>
+    <script src="js/collections/collection.js"></script>
+    <script src="js/routers/router.js"></script>
+    <script src="js/views/view.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
